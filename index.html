@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Camera Directive</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body ng-app="myApp">
+
+  <div class="container" ng-controller="MainCtrl">
+    <camera class="camera" on-select="getPhoto(photo)"></camera>
+
+    <hr>
+
+    <ul class="nostyle">
+      <li ng-repeat="photo in photos">
+        <img ng-src="{{photo.src}}">
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="exif-restorer.js"></script>
+  <script src="camera.js"></script>
+</body>
+</html>
